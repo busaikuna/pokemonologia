@@ -19,6 +19,18 @@
             <img class="icon-pokemon" src="{% static 'icons/normal.svg' %}" alt="icon-pokemon">
         </div>
     </header>
+    <a href="{% url 'add_card' %}">
+        <div style="background-color: rgb(103, 255, 161); border: 2px solid #000; color: #000;
+        padding: 10px 15px; font-family: sans-serif;
+        cursor: pointer; border-radius: 15px;
+        position: absolute; top: 0; right: 0; margin: 20px 30px;" class="add_card">ADICIONAR CARD</div>
+    </a>
+    <a href="{% url 'comunidade' %}">
+        <p style="background-color: aliceblue; border: 2px solid #000; color: #000;
+        padding: 10px 15px; font-family: sans-serif;
+        cursor: pointer; border-radius: 15px;
+        position: absolute; top: 0; right: 0; margin: 10vh 30px;">CARDS DA COMUNIDADE</p>
+    </a>
     <main>
         <div class="more-options">
             <h1>Escolha o tipo:</h1>

@@ -9,6 +9,7 @@ class Profile(models.Model):
 class Card(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     classes = [
+        ("Comunidade", "Comunidade"),
   ("Bug", "Bug"),
         ("Dark", "Dark"),
         ("Dragon", "Dragon"),

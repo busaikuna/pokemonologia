@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Jersey+15&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    width: 50vw;
+    height: 50vh;
+    background-image: url("../icons/bg-pokemon.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+.blur{
+    padding-top: 10vh;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    height: ;
+    background-color: #00000071;
+}
+header{
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.moreOptions{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    filter: invert(1);
+    margin: 30px 60px;
+    cursor: pointer;
+}
+.titulo{
+    padding: 10px 30px;
+    border-radius: 15px;
+    border: #000 2px solid;
+    background-color: rgb(255, 255, 255);
+    font-size: 0.7rem;
+    font-family: "Oxanium", serif;
+    font-optical-sizing: auto;
+    font-weight: bolder;
+    font-style: normal;
+    color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    flex-direction: column;
+    top: 20px;
+}
+.titulo img{
+    width: 150px;
+}
+.icon-pokemon{
+    margin-top: 20px;
+    width: 50px !important;
+}
+
+main{
+    padding-top: 10vh;
+    width: 100vw;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.more-options.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.blur.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.card {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    width: 300px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+
+.card img.pokemon-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    border: 3px solid #fbb03b;
+    object-fit: contain;
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin: 10px 0 5px 0;
+}
+
+.card .status {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.card .status span {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #f67d43;
+}
+
+.card .description {
+    margin-top: 15px;   
+    font-size: 0.9rem;
+    text-align: center;
+    color: #666;
+}
+.class-icons{
+    cursor: pointer;
+    width: 100px;
+}
+

@@ -1,0 +1,109 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url("https://wallpapers.com/images/featured/pokemon-hd-background-fazqcs1tmwwte1ap.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    padding-top: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+.pokemon-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pokemon-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.pokemon-image {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+}
+
+.pokemon-info {
+    padding: 15px;
+    text-align: center;
+}
+
+.pokemon-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #3B4CCA;
+    margin-bottom: 10px;
+}
+
+.pokemon-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.pokemon-stats {
+    display: flex;
+    justify-content: space-around;
+    font-size: 0.9rem;
+}
+
+.pokemon-stat {
+    background-color: #F8D030;
+    border-radius: 5px;
+    padding: 5px 10px;
+    color: #3B4CCA;
+    font-weight: bold;
+}
+
+.add-pokemon-form {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.add-pokemon-form input,
+.add-pokemon-form textarea,
+.add-pokemon-form button {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.add-pokemon-form button {
+    margin: auto;
+    background-color: #3B4CCA;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.add-pokemon-form button:hover {
+    background-color: #2A2FAF;
+}
+
+.image-preview {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    border: 1px dashed #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    display: none;
+}

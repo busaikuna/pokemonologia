@@ -5,6 +5,31 @@ from .models import Card, Profile
 from django.contrib.auth.models import User
 from django.contrib.auth.decorators import login_required
 
+def add_card(request):
+    if request.method == 'POST':
+        nome = request.POST.get('name')
+        foto = request.FILES.get('image')
+        descricao = request.POST.get('description')
+        ataque = request.POST.get('atk')
+        defesa = request.POST.get('def')
+        hp = request.POST.get('hp')
+        classe = "Comunidade"
+
+        card = Card(
+            user=request.user,
+            nome=nome,
+            foto=foto,
+            descricao=descricao,
+            ataque=ataque,
+            defesa=defesa,
+            hp=hp,
+            classe=classe,
+        )
+        card.save()
+        return redirect('Pokemonologia')
+
+    return render(request, 'pokeapp/add_card.html')
+
 def register(request):
     if request.method == 'POST':
         password = request.POST['password']
@@ -16,7 +41,7 @@ def register(request):
 
         profile = Profile(user=user)
         profile.save()
-        redirect('Pokemonologia')
+        redirect('pokeapp/login.html')
 
     return render(request, 'pokeapp/register.html')
 
@@ -38,3 +63,8 @@ def login_view(request):
 def pokemonologia(request):
     cards = Card.objects.all()
     return render(request, 'pokeapp/pokemonologia.html', {"cards": cards})
+
+@login_required
+def comunidade(request):
+    cards = Card.objects.all()
+    return render(request, 'pokeapp/comunidade.html', {"cards": cards})
