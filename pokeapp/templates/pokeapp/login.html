@@ -7,6 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login - Pokemonologia</title>
     <link rel="stylesheet" href="{% static 'css/forms.css' %}">
+    <style>
+        @media (max-width: 600px) {
+    .info{
+        display: none;
+    }   
+    .formulario{
+        width: 100vw;
+    }
+    .formulario form{
+        width: 85vw;
+    }
+    .formulario p{
+        width: 70%;        
+    }
+}
+    </style>
 </head>
 
 <body  style="overflow: hidden;">
@@ -45,7 +61,6 @@
             </form>
         </section>
     </main>
-    <script src="{% static 'javascript/pokemonologia.js' %}"></script>
 </body>
 
 </html>

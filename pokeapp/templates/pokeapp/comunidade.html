@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokemonologia</title>
+    <link rel="stylesheet" href="{% static 'css/comunidade.css' %}">
+    <style>
+        @media (max-width: 600px) {
+            .add_card{
+                margin-right: 13px !important;
+                font-size: 2vw;
+                margin-left: 10px;
+                text-align: center;
+                padding: 0;
+                width: 10vw;
+                font-weight: bold;
+            }
+    }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a style="text-decoration: none; color: #000; font-weight: bold;
+        background-color: #fff; border-radius: 100%; position: absolute; top: 0; left: 0;
+        padding: 10px 15px; font-family: sans-serif; font-size: 1.3rem; margin: 20px 30px;" href="{% url 'Pokemonologia' %}"><</a>
+        <div class="titulo">
+            <img src="{% static 'icons/logo.png' %}" alt="">
+            <h1>da comunidade</h1>
+        </div>
+    </header>
+    <a href="{% url 'add_card' %}">
+        <div style="background-color: rgb(103, 255, 161); border: 2px solid #000; color: #000;
+        padding: 10px 15px; font-family: sans-serif;
+        cursor: pointer; border-radius: 15px;
+        position: absolute; top: 0; right: 0; margin: 20px 30px;" class="add_card">ADICIONAR CARD</div>
+    </a>
+    <div class="blur">
+        <main>
+            {% for card in cards %}
+            <div class="card">
+                <input type="text" value="{{ card.classe }}" style="display: none;" name="classe" id="classe">
+                <img class="pokemon-photo" src="{{ card.foto.url }}" alt="Dragonite">
+                <h2>{{ card.nome }}</h2>
+                <div class="status">
+                    <span>HP: {{ card.hp }}</span>
+                    <span>ATK: {{ card.ataque }}</span>
+                    <span>DEF: {{ card.defesa }}</span>
+                </div>
+                <p class="description">
+                    {{ card.descricao }}
+                </p>
+                <p style="text-align: left; font-family: sans-serif;
+                width: 100%; margin-top: 25px;" class="criador">
+                    Criado por: <span style="color: #6b6b6b;">{{ card.user }}</span>
+                </p>
+            </div>
+            {% endfor %}
+        </main>
+    </div>
+    <script src="{% static 'javascript/comunidade.js' %}"></script>
+</body>
+
+</html>

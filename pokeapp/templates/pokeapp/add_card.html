@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Cards</title>
+    <link rel="stylesheet" href="{% static 'css/addcard.css' %}">
+    <script>
+        function previewImage(event) {
+            const imagePreview = document.getElementById('image-preview');
+            const file = event.target.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function(e) {
+                    imagePreview.src = e.target.result;
+                    imagePreview.style.display = 'block';
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.style.display = 'none';
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="add-pokemon-form">
+        <h2>Add a Pokémon</h2>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="text" name="name" placeholder="Pokémon Name" required>
+            <input type="file" name="image" accept="image/*" onchange="previewImage(event)" required>
+            <img id="image-preview" class="image-preview" alt="Image Preview">
+            <textarea name="description" placeholder="Description" rows="4" required></textarea>
+            <input type="number" name="atk" placeholder="Attack (ATK)" required>
+            <input type="number" name="def" placeholder="Defense (DEF)" required>
+            <input type="number" name="hp" placeholder="HP" required>
+            <button type="submit">Add Pokémon</button>
+        </form>
+    </div>
+</body>
+</html>
